@@ -1,0 +1,68 @@
+[
+  {
+    "id": "impostor_01",
+    "name": "Among Us Impostor",
+    "role": "chaser",
+    "spawn_mode": "room_random_weighted",
+    "spawn_weights": {
+      "classroom": 3,
+      "hallway": 2,
+      "storage": 1,
+      "cafeteria": 1
+    },
+    "initial_state": "patrol_to_nearest_notebook",
+    "patrol_speed": 4.2,
+    "chase_speed": 9.8,
+    "chase_trigger_distance": 10.0,
+    "chase_duration_min_seconds": 8,
+    "chase_duration_max_seconds": 14,
+    "can_break_doors": true,
+    "break_door_cooldown_seconds": 25,
+    "sabotage_enabled": true,
+    "sabotage_interval_min_seconds": 12,
+    "sabotage_interval_max_seconds": 22,
+    "sabotage_effects": [
+      "light_flicker_3s",
+      "play_sound_from_among_us(sabotage)"
+    ],
+    "kill_on_contact": true,
+    "contact_damage": 100,
+    "detection_cone_angle_degrees": 60,
+    "detection_range": 15.0,
+    "idle_anim_loop": "walk_loop",
+    "chase_anim_loop": "sprint_fast",
+    "death_anim": "collapse_fade",
+    "drop_on_death": null,
+    "max_active_instances": 1,
+    "respawn_delay_seconds": 45,
+    "difficulty_curve": {
+      "start_minutes": 0,
+      "end_minutes": 5,
+      "speed_multiplier_start": 1.0,
+      "speed_multiplier_end": 1.35
+    },
+    "audio_assets": [
+      {
+        "event": "sabotage",
+        "path_in_game": "{game:among-us}/Assets/Audio/sabotage.wav",
+        "volume": 0.75,
+        "loop": false
+      },
+      {
+        "event": "footstep_light",
+        "path_in_game": "{game:among-us}/Assets/Audio/footstep_light.wav",
+        "volume": 0.4,
+        "loop": false
+      }
+    ],
+    "visual_assets": {
+      "model_source": "extracted_from_among-us",
+      "texture_source": "{game:among-us}/Textures/Impostor_Red.png",
+      "scale_factor": 1.1,
+      "render_order": "after_characters"
+    },
+    "collision_radius": 1.2,
+    "pathfinding_layer": "default_walkable",
+    "notes": "Uses player's own Among Us folder; no files are copied. Audio/texture paths are resolved at runtime from companion folder."
+  }
+]
